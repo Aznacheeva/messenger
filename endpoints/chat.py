@@ -19,7 +19,7 @@ async def create_chat(chat: Chat):
 
 @router.put("/{chat_id}", response_model=ChatInDB)
 async def update_chat(chat_id: int, chat: Chat):
-    """Обновит чат"""
+    """Обновить чат"""
     chat_db = chat_database[chat_id - 1]
     for param, value in chat.dict():
         chat_db[param] = value
