@@ -6,9 +6,9 @@ router = APIRouter(prefix="/chat")
 
 
 @router.get("/{chat_id}")
-async def get_chat():
+async def get_chat(chat_id: int):
     """Получить чат по chat_id"""
-    return chat_database[id - 1]
+    return chat_database[chat_id - 1]
 
 
 @router.post("/", response_model=ChatInDB)
